@@ -6,20 +6,24 @@ This directory includes a giant Japanese-English subtitle corpus. The raw data c
 
 ```
 # test.ja
-外れ た 音 という もの を 。
-私 は 間違っ た 方向 に 偏っ て いる と 思い ます 。
-えっ ?、 ギャラ の 支払い 、 待っ て くれ って 。
-出会い系 、 援 交 ?
-こっち は ニガー の 仕事 だ 。
+顔面 パンチ かい ?
+お姉ちゃん 、 何で ?
+もしくは 実際 の 私 の 要求 を 満たす こと も かのう でしょ う 。
+分かっ た 、 リジー 。
+夫 を 自分 で 、 けがす こと に なり ます 。
+あの 、 それ くらい に 、 し て おい て くれ ない ?
+お 掛け 下さい 。
 ```
 
 ```
 # test.en
-so it's hard to even describe.
-but i think he concentrated on the wrong things.
-the kasu high you're telling me is worthless.
-these dating sites, sugar sites?
-my nigga 's my job.
+so face punch , huh ?
+lisa , no !
+or you could actually meet my need .
+me ! ok , lizzy .
+my husband would defile himself .
+hey , can you leave it at that ?
+we can sit in here .
 ```
 
 ## Contents
@@ -42,10 +46,11 @@ Overall:
 For English text:
 
 - Add ‘.’ to the end of English phrase if it do not end with punctuation.
+- Tokenize text with `nltk.
 
 For Japanese text:
 
 - Add ‘。’ to the end of Japanese phrase if it do not end with punctuation.
 - Replace space inside the phrase with ‘、’.
-- Tokenize Japanese with tokenizer `Mecab` and dictionary `mecab-ipadic-neologd`.
+- Tokenize text with tokenizer `Mecab` and dictionary `mecab-ipadic-neologd`.
 

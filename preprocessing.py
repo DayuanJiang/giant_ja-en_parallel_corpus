@@ -2,6 +2,7 @@ import re
 import random
 import MeCab
 from tqdm import tqdm
+from nltk.tokenize import word_tokenize
 
 random.seed(999)
 # https://note.nkmk.me/python-re-regex-character-type/
@@ -49,11 +50,16 @@ with open("raw", "r", encoding="utf-8") as f:
             ja_movie.append(add_punctuation(ja_sent, "ja"))
 
 parser = MeCab.Tagger("-O wakati -d /usr/local/lib/mecab/dic/mecab-ipadic-neologd")
+
 parsed_ja_movie = []
 for sent in tqdm(ja_movie):
     parsed_ja_movie.append(" ".join(parser.parse(sent).split()))
 
-data = list(zip(en_movie, parsed_ja_movie))
+parsed_en_movie = []
+for sent in tqdm(en_movie):
+    parsed_en_movie.append(" ".join(word_tokenize(sent)))
+
+data = list(zip(parsed_en_movie, parsed_ja_movie))
 
 train_set, dev_set, test_set = split_dataset(data)
 save(dev_set, "dev")
